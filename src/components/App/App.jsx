@@ -23,7 +23,11 @@ export default class App extends Component {
       this.setState({
         contacts: parseContacts,
       });
-    } else if (parseContacts.length === 0) {
+    } else if (parseContacts.length !== null && parseContacts.length === 0) {
+      this.setState({
+        contacts: this.state.contacts,
+      });
+    } else {
       this.setState({
         contacts: this.state.contacts,
       });
