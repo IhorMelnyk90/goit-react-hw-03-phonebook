@@ -1,15 +1,14 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-import css from './Filter.module.css';
+import { FilterForm } from './Filter.styled';
 
 export default function Filter({ title, value, onChange }) {
   const filterId = nanoid();
   return (
     <div>
       <label htmlFor="filterId">{title}</label>
-      <input
-        className={css.filterForm}
+      <FilterForm
         id={filterId}
         type="text"
         name="filter"

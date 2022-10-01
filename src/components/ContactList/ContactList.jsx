@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import css from './ContactList.module.css';
+import {ListLi, ListBtnDelete} from './ContactForm.styled'
 
 export default function ContactList({ items, removeContact }) {
   const elements = items.map(({ name, number, id }) => {
     return (
-      <li key={id} className={css.listLi}>
+      <ListLi key={id}>
         {name} {number}
-        <button className={css.listBntDelete} onClick={() => removeContact(id)}>
+        <ListBtnDelete onClick={() => removeContact(id)}>
           Delete
-        </button>
-      </li>
+        </ListBtnDelete>
+      </ListLi>
     );
   });
   return (

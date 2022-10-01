@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import css from './App.module.css';
 import ContactForm from 'components/ContactForm';
 import ContactList from 'components/ContactList';
 import Filter from 'components/Filter';
+import {Container, Title1, Title2} from './App.styled'
 
 export default class App extends Component {
   state = {
@@ -99,13 +99,13 @@ export default class App extends Component {
     const contacts = this.getFilteredContacts();
 
     return (
-      <div className={css.container}>
+      <Container>
         <div>
-          <h1 className={css.title}>Phonebook</h1>
+          <Title1>Phonebook</Title1>
           <ContactForm onSubmit={addContact} />
         </div>
         <div>
-          <h2 className={css.title}>Contacts</h2>
+          <Title2>Contacts</Title2>
           <Filter
             title="Find contacts by name"
             value={filter}
@@ -113,7 +113,7 @@ export default class App extends Component {
           />
           <ContactList items={contacts} removeContact={removeContact} />
         </div>
-      </div>
+      </Container>
     );
   }
 }
