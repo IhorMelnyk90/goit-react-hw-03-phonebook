@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactForm from 'components/ContactForm';
 import ContactList from 'components/ContactList';
 import Filter from 'components/Filter';
-import {Container, Title1, Title2} from './App.styled'
+import { Container, Title1, Title2 } from './App.styled';
 
 export default class App extends Component {
   state = {
@@ -22,14 +22,6 @@ export default class App extends Component {
     if (parseContacts && parseContacts.length !== 0) {
       this.setState({
         contacts: parseContacts,
-      });
-    } else if (parseContacts === []) {
-      this.setState({
-        contacts: this.state.contacts,
-      });
-    } else {
-      this.setState({
-        contacts: this.state.contacts,
       });
     }
   }
